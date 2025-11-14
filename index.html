@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editkaro.in — Light Premium Portfolio</title>
+  <meta name="description" content="Editkaro.in — Social media marketing & video editing agency portfolio (Intern project)." />
+
+  <!-- Fonts and libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    :root{
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#2b6ef6; /* blue accent chosen */
+      --soft:#eef3ff;
+      --radius:14px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#0b1220;margin:0}
+    a{color:var(--accent);text-decoration:none}
+
+    /* Header */
+    header{position:sticky;top:0;background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);border-bottom:1px solid #e6eef8}
+    .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#57a1ff);display:grid;place-items:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);font-weight:600}
+    .btn-primary{background:var(--accent);color:white;padding:8px 14px;border-radius:10px;font-weight:700}
+
+    /* Hero */
+    .hero{max-width:var(--maxw);margin:36px auto;padding:32px;background:linear-gradient(180deg,white,var(--soft));border-radius:18px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero h1{font-size:34px;margin:0;color:#071128}
+    .hero p{color:var(--muted);margin-top:10px}
+    .hero .actions{margin-top:18px;display:flex;gap:12px}
+
+    .preview{background:#f8fbff;border-radius:12px;padding:12px;border:1px solid #e6eef8}
+    .preview img{width:100%;height:240px;object-fit:cover;border-radius:8px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .metric{font-size:13px;color:var(--muted)}
+
+    /* Filters and grid */
+    .section{max-width:var(--maxw);margin:28px auto;padding:0 20px}
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .filters button{border:1px solid #e6eef8;background:white;padding:8px 12px;border-radius:999px;color:var(--muted);cursor:pointer}
+    .filters button.active{background:var(--accent);color:white;border-color:transparent}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e6eef8;box-shadow:0 6px 20px rgba(13,38,76,0.04);transition:transform .22s,box-shadow .22s}
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(13,38,76,0.08)}
+    .thumb{height:200px;overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .tag{position:absolute;left:12px;top:12px;background:rgba(255,255,255,0.9);padding:6px 10px;border-radius:999px;font-weight:700;color:#0b1220}
+    .card .info{padding:12px}
+    .title{font-weight:700;margin-bottom:6px}
+    .sub{font-size:13px;color:var(--muted)}
+
+    /* Contact */
+    .contact-card{background:white;border-radius:12px;padding:20px;border:1px solid #e6eef8}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.hero{padding:18px;grid-template-columns:1fr}header nav a{display:none}.nav{padding:10px}}
+
+    /* small animation helper */
+    .fade{opacity:0;transform:translateY(12px);transition:all .6s ease}
+    .fade.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">EK</div>
+        <div>
+          <div style="font-weight:700">Editkaro.in</div>
+          <div style="font-size:12px;color:var(--muted)">Social Media Marketing & Video Editing</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="btn-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="hero">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="background:var(--soft);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:700">Premium</div></div>
+        <h1>Professional video edits with performance-first storytelling</h1>
+        <p>Clean aesthetics. Platform-optimised cuts. Color grading. Ads that convert. Built for creators and brands.</p>
+        <div class="actions">
+          <a class="btn-primary" href="#portfolio">See Work</a>
+          <a href="#contact" style="padding:8px 14px;border-radius:10px;border:1px solid #e6eef8;background:white;color:var(--muted);">Request Quote</a>
+        </div>
+      </div>
+
+      <aside class="preview">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="featured preview">
+        <div class="meta">
+          <div>
+            <div style="font-weight:700">Featured Cut • Short-form Ad</div>
+            <div style="font-size:13px;color:var(--muted)">Optimised for Reels & TikTok</div>
+          </div>
+          <div class="metric">Views • 120K</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2 style="text-align:center;color:#0b1220;margin-bottom:6px">Portfolio</h2>
+      <p style="text-align:center;color:var(--muted);margin-bottom:18px">Click any thumbnail to preview. Replace placeholders with client assets when ready.</p>
+
+      <div class="filters" role="tablist">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="short">Short-form</button>
+        <button data-filter="long">Long-form</button>
+        <button data-filter="gaming">Gaming</button>
+        <button data-filter="football">Football</button>
+        <button data-filter="ecom">eCommerce</button>
+        <button data-filter="doc">Documentary</button>
+        <button data-filter="grade">Color Grading</button>
+        <button data-filter="anime">Anime</button>
+        <button data-filter="ads">Ads</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <!-- Each card uses neutral cinematic placeholder images -->
+        <article class="card" data-category="short" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-young-woman-on-a-laptop-2653/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80" alt="Short-form placeholder">
+            </a>
+            <div class="tag">Short</div>
+          </div>
+          <div class="info">
+            <div class="title">Short-form Reel — Product</div>
+            <div class="sub">30s • Hook-first edit • CTA</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="ecom" data-aos="fade-up" data-aos-delay="40">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-shopping-online-7836/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80" alt="Ecom placeholder">
+            </a>
+            <div class="tag">eCommerce</div>
+          </div>
+          <div class="info">
+            <div class="title">eCommerce Ad • UGC Style</div>
+            <div class="sub">15s • Conversion focused</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="gaming" data-aos="fade-up" data-aos-delay="80">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-gaming-keyboard-5623/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80" alt="Gaming placeholder">
+            </a>
+            <div class="tag">Gaming</div>
+          </div>
+          <div class="info">
+            <div class="title">Gaming Montage</div>
+            <div class="sub">Highlights • Motion FX</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="doc" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-filming-an-interview-8352/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Documentary placeholder">
+            </a>
+            <div class="tag">Documentary</div>
+          </div>
+          <div class="info">
+            <div class="title">Documentary Excerpt</div>
+            <div class="sub">Long-form • Narrative</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="grade" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-abstract-colorful-liquid-2084/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80" alt="Color grade placeholder">
+            </a>
+            <div class="tag">Grade</div>
+          </div>
+          <div class="info">
+            <div class="title">Cinematic Grade Demo</div>
+            <div class="sub">LUT showcase</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="anime" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-abstract-colorful-liquid-2084/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070c7e?auto=format&fit=crop&w=1200&q=80" alt="Anime placeholder">
+            </a>
+            <div class="tag">Anime</div>
+          </div>
+          <div class="info">
+            <div class="title">Anime-style Edit</div>
+            <div class="sub">Stylized cuts & FX</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="football" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-football-stadium-7052/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Football placeholder">
+            </a>
+            <div class="tag">Football</div>
+          </div>
+          <div class="info">
+            <div class="title">Match Highlights</div>
+            <div class="sub">Edits • Slow-mo goals</div>
+          </div>
+        </article>
+
+        <article class="card" data-category="ads" data-aos="fade-up">
+          <div class="thumb" style="position:relative">
+            <a class="glightbox" href="https://cdn.coverr.co/videos/coverr-young-woman-on-a-laptop-2653/1080p.mp4" data-type="video">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" alt="Brand ad placeholder">
+            </a>
+            <div class="tag">Ads</div>
+          </div>
+          <div class="info">
+            <div class="title">60s Brand Film</div>
+            <div class="sub">Story-led ad</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="services" class="section" data-aos="fade-up">
+      <h2 style="text-align:center;color:#0b1220">Services</h2>
+      <p style="text-align:center;color:var(--muted);max-width:900px;margin:8px auto 20px">Short-form edits, Ads, Gaming montages, Football highlights, Color grading, Documentary cuts, Anime edits. Turnkey packages available.</p>
+
+      <div style="max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;padding:10px">
+        <div style="background:white;padding:16px;border-radius:12px;border:1px solid #e6eef8"> <strong>Short-form</strong><div style="color:var(--muted);margin-top:8px">Platform-specific hooks and edits for Reels/TikTok.</div></div>
+        <div style="background:white;padding:16px;border-radius:12px;border:1px solid #e6eef8"> <strong>Ads</strong><div style="color:var(--muted);margin-top:8px">Creative concepts focused on conversion.</div></div>
+        <div style="background:white;padding:16px;border-radius:12px;border:1px solid #e6eef8"> <strong>Gaming</strong><div style="color:var(--muted);margin-top:8px">Montages, intros, overlays and stream assets.</div></div>
+        <div style="background:white;padding:16px;border-radius:12px;border:1px solid #e6eef8"> <strong>Color</strong><div style="color:var(--muted);margin-top:8px">Cinematic LUTs and grading passes.</div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2 style="text-align:center;color:#0b1220">Contact & Hire</h2>
+      <p style="text-align:center;color:var(--muted);max-width:760px;margin:8px auto 22px">Send a brief or reach out on social. We respond within 48 hours. For this intern project the contact form simulates sending.</p>
+
+      <div style="max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:start">
+        <div class="contact-card">
+          <form onsubmit="event.preventDefault();alert('Brief submitted. Thank you.');">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <input type="text" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef8" required>
+              <input type="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid #e6eef8" required>
+            </div>
+            <input type="text" placeholder="Project title" style="margin-top:12px;padding:10px;border-radius:8px;border:1px solid #e6eef8" required>
+            <textarea placeholder="Describe the brief" rows="6" style="margin-top:12px;padding:10px;border-radius:8px;border:1px solid #e6eef8" required></textarea>
+            <div style="margin-top:12px;display:flex;gap:10px;justify-content:flex-end">
+              <button class="btn-primary" type="submit">Send Brief</button>
+            </div>
+          </form>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:12px">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <div style="color:var(--muted);margin-top:8px"><a href="mailto:contact@editkaro.in">contact@editkaro.in</a></div>
+          </div>
+
+          <div class="contact-card">
+            <strong>Social</strong>
+            <div style="color:var(--muted);margin-top:8px" class="contact-btns">
+              <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://editkaro.in" target="_blank" rel="noreferrer">Website</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <strong>Location</strong>
+            <div style="color:var(--muted);margin-top:8px">India • Remote</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer style="margin-top:36px;padding:20px 0;text-align:center;color:var(--muted)">© 2025 Editkaro.in • Internship demo. Replace placeholders with final assets before client delivery.</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({duration:700,once:true,anchorPlacement:'top-bottom'});
+
+    // Init GLightbox
+    const lightbox = GLightbox({selector:'.glightbox',touchNavigation:true});
+
+    // Filtering
+    const filterBtns = document.querySelectorAll('.filters button');
+    const cards = document.querySelectorAll('.grid .card');
+    filterBtns.forEach(btn=>btn.addEventListener('click',(e)=>{
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      cards.forEach(c=>{ c.style.display = (f==='all' || c.dataset.category===f) ? 'block' : 'none'; });
+    }));
+
+    // simple lazy image loading using IntersectionObserver
+    if('IntersectionObserver' in window){
+      const imgs = document.querySelectorAll('.thumb img');
+      const io = new IntersectionObserver((entries,obs)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+            const img = en.target;
+            // if using data-src, swap here (current images are full urls)
+            img.classList.add('loaded');
+            obs.unobserve(img);
+          }
+        });
+      },{rootMargin:'200px'});
+      imgs.forEach(i=>io.observe(i));
+    }
+
+  </script>
+</body>
+</html>
